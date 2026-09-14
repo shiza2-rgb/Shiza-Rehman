@@ -183,6 +183,40 @@
                 font-size: 25px;
             }
 
+        /* ---------- SCROLL BEHAVIOR AND NAVIGATION ---------- */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: #287ca8;
+            background: rgba(232, 247, 255, 0.9);
+            border: 1px solid #b9e5f9;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            box-shadow: 0 3px 10px rgba(75, 145, 190, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background: #287ca8;
+            color: white;
+            border-color: #287ca8;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(40, 124, 168, 0.2);
         }
 
     </style>
@@ -238,6 +272,10 @@
             </p>
 
             <ul>
+                <li>Participate in team meetings to discuss project progress and address any questions or concerns.</li>
+            </ul>
+
+        </div>
 
 
 
