@@ -3,50 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shiza Rehman</title>
-    <p>Mechanical Engineering Student | Aspiring Technology Designer</p>
+
+    <title>Shiza Rehman | Portfolio</title>
+
     <style>
+
+        /* ---------- GENERAL PAGE ---------- */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #243447;
+
+            /* Soft light-blue background */
+            background: linear-gradient(
+                135deg,
+                #3da2e0,
+                #89c3eb,
+                #9ec3db
+            );
+
+            line-height: 1.7;
+            padding: 40px 20px;
         }
+
+
+        /* ---------- MAIN CONTAINER ---------- */
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+        }
+
+
+        /* ---------- HEADER ---------- */
+
+        header {
+            text-align: center;
+            padding: 45px 30px;
+            margin-bottom: 30px;
+
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+
+            box-shadow: 0 8px 25px rgba(75, 145, 190, 0.15);
+
+            border: 1px solid #d4efff;
+        }
+
+        header h1 {
+            font-size: 42px;
+            color: #287ca8;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 17px;
+            color: #557080;
+        }
+
+
+        /* ---------- SECTIONS ---------- */
+
+        section {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 35px;
+            margin-bottom: 30px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 6px 20px rgba(75, 145, 190, 0.12);
+
+            border-left: 6px solid #8ed0f2;
+        }
+
+        section h2 {
+            color: #287ca8;
+            font-size: 29px;
+            margin-bottom: 25px;
+
+            border-bottom: 2px solid #ccecff;
+            padding-bottom: 10px;
+        }
+
+
+        /* ---------- EXPERIENCE CARDS ---------- */
+
+        .experience {
+            padding: 20px;
+            margin-bottom: 22px;
+
+            background: #f5fbff;
+
+            border-radius: 14px;
+
+            border: 1px solid #d8effc;
+
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease;
+        }
+
+        .experience:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 7px 18px rgba(60, 140, 185, 0.15);
+        }
+
+        .date {
+            color: #4b9bc5;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-size: 20px;
+            color: #243447;
+            margin-bottom: 12px;
+        }
+
+        .job-title b {
+            color: #287ca8;
+        }
+
+
+        /* ---------- BULLET POINTS ---------- */
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #405563;
+        }
+
+        li::marker {
+            color: #65b9e5;
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #66808f;
+            font-size: 14px;
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px 12px;
+            }
+
+            header {
+                padding: 35px 20px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            section {
+                padding: 25px 20px;
+            }
+
+            section h2 {
+                font-size: 25px;
+            }
+
+        }
+
     </style>
 </head>
+
+
 <body>
-    <h2>Work experience</h2>
-    <p><strong>MAY 2026 - AUGUST 2026</strong></p>
-    <p><b>Aspen Trails Veterinary Clinic</b> - <i>Front Desk Receptionist</i></p>
-    <p>Sanitized and prepared examination rooms between appointments.</p>
-    <p>Organized and restocked blankets, towels, and other examination-room supplies.</p>
-    <p>Checked in an average of 8 patients per day, recorded their weights upon arrival, and assisted clients with appointment-related inquiries.</p>
-    <p>Processed client purchases for medications, examinations, food, treats, and vaccinations, including handling cash and closing the clinic.</p>
-    <p>Maintained a 100% accuracy when processing billing and updating client records.</p>
-    <p>Contacted clients to remind them of their upcoming appointment and the refund policy.</p>
-    <p>Received phone calls to address a client’s questions and concerns with a friendly and helpful demeanour.</p>
-    <p>Prepared and provided vaccine certificates for clients.</p>
-    <p><strong>DECEMBER 2020 - JANUARY 2021</strong></p>
-    <p><b>Snow Removal Service, Aspen Trails</b> - <i>Self-Employed Shoveler</i></p>
-    <p>Provided snow removal services for local residents, including shoveling, scraping, de-icing, and salting.</p>
-    <p>Coordinated with team members to efficiently clear sidewalks and driveways.</p>
-    <p>Communicated with customers by phone and text to coordinate service times and requirements.</p>
-    <p>Promoted the service through social media advertising with the help of team members.</p>
-    <p>Built rapport with customers through reliable service, meeting or exceeding expectations.</p>
-    <h2>Volunteer Experience</h2>
-    <p>MARCH 2023 - PRESENT</p>
-    <p><b>Community Events, Masjid In the Park</b> - <i>Volunteer in Ambassadors of the Park</i></p>
-    <p>Volunteered in hosting seniors’ visit and tour of the mosque (June 2023)</p>
-    <p>Decorate the mosque with lights and decorations for Ramadan every year</p>
-    <p>Participate with other community members as a team in routine cleaning of the mosque, including dusting, sweeping and removing trash</p>
-    <p><strong></strong>JUNE 2023 - PRESENT</strong></p>
-    <p><b>Project Planning Committee, Masjid In the Park</b> - <i>Community Volunteer</i></p>
-    <p>Assist in planning, setting up, and executing Paint Night, Winter Carnival, Women’s Social Night and other community events.</p>
-    <p>Helped organize and execute the July 2026 Open House, which attracted 200+ attendees.</p>
-    <p>Assist with planning and operating bake sale fundraisers, including preparing baked goods, creating promotional posters, and accurately processing cash and card transactions.</p>
-    <p>Greet community members at bake sale fundraisers, answer questions about baked goods and pricing.</p>
-    <p>Support the Children's Program every Ramadan by supervising and assisting children during Friday and Saturday night prayers.</p>
-    <h2>Education</h2>
-    <p><strong>SEPTEMBER 2023 - PRESENT</strong></p>
-    <p><b>University of Alberta</b> - <i>Bachelor of Science in Mechanical Engineering</i></p>
-    <p><strong>SEPTEMBER 2022 - JUNE 2025</strong></p>
-    <p><b></b>Bev Facey Composite High School</b> - <i>High School Diploma</i></p>
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>Shiza Rehman</h1>
+        <p>Mechanical Engineering Student | Aspiring Engineer</p>
+    </header>
+
+
+
+    <!-- WORK EXPERIENCE -->
+
+    <section>
+
+        <h2>Work Experience</h2>
+
+
+        <div class="experience">
+
+            <p class="date">MAY 2026 – AUGUST 2026</p>
+
+            <p class="job-title">
+                <b>Aspen Trails Veterinary Clinic</b>
+                — <i>Front Desk Receptionist</i>
+            </p>
+
+            <ul>
+                <li>Sanitized and prepared examination rooms between appointments.</li>
+
+                <li>Organized and restocked blankets, towels, and other examination-room supplies.</li>
+
+                <li>Checked in an average of 8 patients per day, recorded their weights upon arrival, and assisted clients with appointment-related inquiries.</li>
+
+                <li>Processed client purchases for medications, examinations, food, treats, and vaccinations, including handling cash and closing the clinic.</li>
+
+                <li>Maintained 100% accuracy when processing billing and updating client records.</li>
+
+                <li>Contacted clients to remind them of upcoming appointments and the refund policy.</li>
+
+                <li>Received phone calls to address client questions and concerns with a friendly and helpful demeanour.</li>
+
+                <li>Prepared and provided vaccine certificates for clients.</li>
+            </ul>
+
+        </div>
+
+
+
+        <div class="experience">
+
+            <p class="date">DECEMBER 2020 – JANUARY 2021</p>
+
+            <p class="job-title">
+                <b>Snow Removal Service, Aspen Trails</b>
+                — <i>Self-Employed Shoveler</i>
+            </p>
+
+            <ul>
+                <li>Provided snow removal services for local residents, including shoveling, scraping, de-icing, and salting.</li>
+
+                <li>Coordinated with team members to efficiently clear sidewalks and driveways.</li>
+
+                <li>Communicated with customers by phone and text to coordinate service times and requirements.</li>
+
+                <li>Promoted the service through social media advertising with the help of team members.</li>
+
+                <li>Built rapport with customers through reliable service, meeting or exceeding expectations.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- VOLUNTEER EXPERIENCE -->
+
+    <section>
+
+        <h2>Volunteer Experience</h2>
+
+
+        <div class="experience">
+
+            <p class="date">MARCH 2023 – PRESENT</p>
+
+            <p class="job-title">
+                <b>Community Events, Masjid In the Park</b>
+                — <i>Volunteer in Ambassadors of the Park</i>
+            </p>
+
+            <ul>
+
+                <li>Volunteered in hosting seniors' visits and tours of the mosque.</li>
+
+                <li>Decorated the mosque with lights and decorations for Ramadan each year.</li>
+
+                <li>Participated with other community members in routine cleaning of the mosque, including dusting, sweeping, and removing trash.</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="experience">
+
+            <p class="date">JUNE 2023 – PRESENT</p>
+
+            <p class="job-title">
+                <b>Project Planning Committee, Masjid In the Park</b>
+                — <i>Community Volunteer</i>
+            </p>
+
+            <ul>
+
+                <li>Assist in planning, setting up, and executing Paint Night, Winter Carnival, Women's Social Night, and other community events.</li>
+
+                <li>Helped organize and execute the July 2026 Open House, which attracted 200+ attendees.</li>
+
+                <li>Assist with planning and operating bake sale fundraisers, including preparing baked goods, creating promotional posters, and accurately processing cash and card transactions.</li>
+
+                <li>Greet community members at bake sale fundraisers and answer questions about baked goods and pricing.</li>
+
+                <li>Support the Children's Program every Ramadan by supervising and assisting children during Friday and Saturday night prayers.</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+        © 2026 Shiza Rehman
+    </footer>
+
+
+</div>
+
 </body>
 </html>
