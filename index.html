@@ -186,26 +186,34 @@
         /* ---------- SCROLL BEHAVIOR AND NAVIGATION ---------- */
 
         .nav-buttons {
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 32px;
-            margin-bottom: 25px;
+            gap: 45px;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-        .nav-buttons a {
-            text-decoration: none;
-            color: #287ca8;
+        .nav-buttons a,
+        .nav-buttons a:visited,
+        .nav-buttons a:hover,
+        .nav-buttons a:active {
+            color: #287ca8 !important;
+            text-decoration: none !important;
+            text-transform: uppercase;
+            font-family: "Trebuchet MS", sans-serif;
             font-size: 14px;
             font-weight: bold;
             letter-spacing: 1px;
-            text-transform: uppercase;
+            border: none;
+            background: none;
+            box-shadow: none;
             transition: color 0.25s ease;
         }
 
         .nav-buttons a:hover {
-            color: #1d6288;
+            color: #1d6288 !important;
         }
 
         html {
@@ -224,11 +232,12 @@
     <!-- HEADER -->
 
     <nav class="nav-buttons">
-        <a href="#work">Work Experience</a>
-        <a href="#interests">Interests</a>
-        <a href="#projects">Engineering Projects</a>
-        <a href="#volunteer">Volunteer</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">ABOUT</a>
+        <a href="#work">WORK</a>
+        <a href="#projects">ENGINEERING PROJECTS</a>
+        <a href="#interests">INTERESTS</a>
+        <a href="#volunteer">VOLUNTEER</a>
+        <a href="#contact">CONTACT</a>
     </nav>
 
 
