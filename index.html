@@ -237,6 +237,101 @@
         .job-title b, .project-name b {
             color: var(--primary-blue);
         }
+        .insta-carousel {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 18px auto 0;
+            overflow: hidden;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            touch-action: pan-y;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 380px; /* Adjust height if you want taller or shorter photos */
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Number badge on top right (1/2) */
+        .carousel-counter {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Glassmorphism Arrow Buttons */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.85);
+            color: #243447;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: background 0.2s ease;
+        }
+
+        .carousel-btn:hover {
+            background: #ffffff;
+        }
+
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+
+        /* Dots at bottom */
+        .carousel-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .dot.active {
+            background: #ffffff;
+            width: 10px;
+            height: 10px;
+        }
 
         ul {
             padding-left: 22px;
@@ -384,7 +479,7 @@
                         <p class="job-title"><b>MY LOVE FOR ART</b></p>
                         <p>
                             Outside of university, I enjoy painting and creating art. I find it to be a relaxing and fulfilling hobby that allows me to express my creativity. This past year, I had the opportunity to showcase my artwork on local transit buses running in Strathcona County, which was an exciting experience! 
-                            Check out my artwork here: <a href="https://www.instagram.com/p/DTef9KUESfZ/?img_index=2" target="_blank" rel="noopener noreferrer">Arts in Public Places</a>.
+                            Check out my artwork here: <a href="https://www.instagram.com/p/DTef9KUESfZ/?img_index=2" target="_blank" rel="noopener noreferrer">Strathcona County Next Gen | Young Artists In Motion</a>.
                         </p>
                     </div>
 
@@ -399,9 +494,31 @@
                         <p class="job-title"><b>MY LOVE FOR OUTDOOR PHOTOGRAPHY</b></p>
                         <p>
                             I enjoy photography and capturing moments in time, such as sunsets and sunrises. I find it to be a rewarding hobby that allows me to explore my surroundings and appreciate the beauty of the world around me, especially while traveling.
-                            <img src="madina.jpeg.jpeg" alt="Taken in Madina, Saudi Arabia" style="width: 100%; max-width: 600px; border-radius: 12px; margin-top: 15px;">
-                            <img src="sunrise.jpeg" alt="Sunrise at University of Alberta campus" style="width: 100%; max-width: 600px; border-radius: 12px; margin-top: 15px;">
                         </p>
+
+                        <!-- INSTAGRAM-STYLE PHOTO SLIDER -->
+                        <div class="insta-carousel" id="photoCarousel">
+                            <div class="carousel-counter" id="photoCounter">1 / 2</div>
+                            
+                            <div class="carousel-track" id="photoTrack">
+                                <div class="carousel-slide">
+                                    <img src="madina.jpeg.jpeg" alt="Taken in Madina, Saudi Arabia">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="sunrise.jpeg" alt="Sunrise at University of Alberta campus">
+                                </div>
+                            </div>
+
+                            <!-- Navigation Arrows -->
+                            <button class="carousel-btn prev-btn" onclick="movePhotoSlide(-1)" aria-label="Previous image">&#10094;</button>
+                            <button class="carousel-btn next-btn" onclick="movePhotoSlide(1)" aria-label="Next image">&#10095;</button>
+
+                            <!-- Dots -->
+                            <div class="carousel-dots" id="photoDots">
+                                <span class="dot active" onclick="goToPhotoSlide(0)"></span>
+                                <span class="dot" onclick="goToPhotoSlide(1)"></span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="experience">
