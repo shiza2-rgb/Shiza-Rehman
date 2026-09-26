@@ -766,6 +766,12 @@
                 switchTab(null, 'home');
             }
         }
+        function movePhotoSlide(direction) {
+            currentPhotoSlide += direction;
+            if (currentPhotoSlide < 0) currentPhotoSlide = totalPhotoSlides - 1;
+            if (currentPhotoSlide >= totalPhotoSlides) currentPhotoSlide = 0;
+            updatePhotoCarousel();
+}
 
         window.addEventListener('DOMContentLoaded', handleHashChange);
         window.addEventListener('popstate', handleHashChange);
