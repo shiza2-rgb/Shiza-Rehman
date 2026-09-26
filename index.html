@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Shiza Rehman | Portfolio</title>
-
+    <!-- Google Fonts for elevated, accessible typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
     <style>
-
-        /* ---------- GENERAL PAGE ---------- */
+        :root {
+            --primary-blue: #287ca8;
+            --primary-hover: #1d6288;
+            --accent-blue: #8ed0f2;
+            --light-bg-gradient: linear-gradient(135deg, #3da2e0 0%, #89c3eb 50%, #9ec3db 100%);
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --header-bg: rgba(255, 255, 255, 0.85);
+            --text-dark: #243447;
+            --text-muted: #557080;
+            --border-light: #d4efff;
+            --focus-ring: #0284c7;
+        }
 
         * {
             box-sizing: border-box;
@@ -17,123 +30,210 @@
         }
 
         body {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            color: #243447;
-
-            /* Soft light-blue background */
-            background: linear-gradient(
-                135deg,
-                #3da2e0,
-                #89c3eb,
-                #9ec3db
-            );
-
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            color: var(--text-dark);
+            background: var(--light-bg-gradient);
+            background-attachment: fixed;
             line-height: 1.7;
-            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: 90px; /* Offset for sticky top navbar */
         }
 
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(40, 124, 168, 0.08);
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+        }
 
-        /* ---------- MAIN CONTAINER ---------- */
+        .nav-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            white-space: nowrap;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-pills {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+            overflow-x: auto;
+            padding: 4px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Hide scrollbars for clean tab bar */
+        .nav-pills::-webkit-scrollbar {
+            display: none;
+        }
+        .nav-pills {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .nav-item {
+            flex-shrink: 0;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            color: #3b5f75;
+            text-decoration: none;
+            background: transparent;
+            border: 1px solid transparent;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .nav-link.active {
+            color: #ffffff !important;
+            background: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(40, 124, 168, 0.3);
+            border-color: var(--primary-blue);
+        }
+
+        .nav-link:focus-visible {
+            outline: 2px solid var(--focus-ring);
+            outline-offset: 2px;
+        }
 
         .container {
             max-width: 950px;
-            margin: auto;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 20px 40px;
+            flex: 1;
         }
-
-
-        /* ---------- HEADER ---------- */
 
         header {
             text-align: center;
-            padding: 45px 30px;
+            padding: 40px 30px;
             margin-bottom: 30px;
-
-            background: rgba(255, 255, 255, 0.85);
+            background: var(--header-bg);
             border-radius: 20px;
-
             box-shadow: 0 8px 25px rgba(75, 145, 190, 0.15);
-
-            border: 1px solid #d4efff;
+            border: 1px solid var(--border-light);
+            backdrop-filter: blur(10px);
         }
 
         header h1 {
-            font-size: 42px;
-            color: #287ca8;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.75rem;
+            color: var(--primary-blue);
             margin-bottom: 8px;
+            font-weight: 700;
         }
 
         header p {
-            font-size: 17px;
-            color: #557080;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
 
-        /* ---------- SECTIONS ---------- */
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         section {
-            background: rgba(255, 255, 255, 0.92);
+            background: var(--card-bg);
             padding: 35px;
             margin-bottom: 30px;
-
             border-radius: 18px;
-
             box-shadow: 0 6px 20px rgba(75, 145, 190, 0.12);
-
-            border-left: 6px solid #8ed0f2;
+            border-left: 6px solid var(--accent-blue);
         }
 
         section h2 {
-            color: #287ca8;
-            font-size: 29px;
-            margin-bottom: 25px;
-
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--primary-blue);
+            font-size: 1.85rem;
+            margin-bottom: 20px;
             border-bottom: 2px solid #ccecff;
             padding-bottom: 10px;
         }
 
-
-        /* ---------- EXPERIENCE CARDS ---------- */
-
         .experience {
-            padding: 20px;
+            padding: 22px;
             margin-bottom: 22px;
-
             background: #f5fbff;
-
             border-radius: 14px;
-
             border: 1px solid #d8effc;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
 
-            transition: transform 0.2s ease,
-                        box-shadow 0.2s ease;
+        .experience:last-child {
+            margin-bottom: 0;
         }
 
         .experience:hover {
             transform: translateY(-3px);
-
-            box-shadow: 0 7px 18px rgba(60, 140, 185, 0.15);
+            box-shadow: 0 8px 20px rgba(60, 140, 185, 0.15);
         }
 
         .date {
             color: #4b9bc5;
-            font-size: 14px;
-            font-weight: bold;
+            font-size: 0.85rem;
+            font-weight: 700;
             letter-spacing: 1px;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
         }
 
-        .job-title {
-            font-size: 20px;
-            color: #243447;
+        .job-title, .project-name {
+            font-size: 1.2rem;
+            color: var(--text-dark);
             margin-bottom: 12px;
+            font-weight: 600;
         }
 
-        .job-title b {
-            color: #287ca8;
+        .job-title b, .project-name b {
+            color: var(--primary-blue);
         }
-
-
-        /* ---------- BULLET POINTS ---------- */
 
         ul {
             padding-left: 22px;
@@ -148,291 +248,345 @@
             color: #65b9e5;
         }
 
+        video {
+            margin-top: 15px;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-        /* ---------- FOOTER ---------- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background: #f5fbff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #d8effc;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .contact-card a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-word;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
 
         footer {
             text-align: center;
-            padding: 20px;
-            color: #66808f;
-            font-size: 14px;
+            padding: 25px 20px;
+            color: #ffffff;
+            font-size: 0.9rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            margin-top: auto;
         }
 
-
-        /* ---------- MOBILE ---------- */
-
-        @media (max-width: 600px) {
-
+        @media (max-width: 768px) {
             body {
-                padding: 20px 12px;
+                padding-top: 110px;
             }
 
-            header {
-                padding: 35px 20px;
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .nav-brand {
+                text-align: center;
+            }
+
+            .nav-pills {
+                justify-content: flex-start;
+                padding-bottom: 4px;
             }
 
             header h1 {
-                font-size: 32px;
+                font-size: 2.1rem;
             }
 
             section {
                 padding: 25px 20px;
             }
-
-            section h2 {
-                font-size: 25px;
-            }
-
-        /* ---------- SCROLL BEHAVIOR AND NAVIGATION ---------- */
-
-        .nav-buttons {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 45px;
-            margin-bottom: 30px;
-            text-align: center;
         }
-
-        .nav-buttons a,
-        .nav-buttons a:visited,
-        .nav-buttons a:hover,
-        .nav-buttons a:active {
-            color: #287ca8 !important;
-            text-decoration: none !important;
-            text-transform: uppercase;
-            font-family: "Trebuchet MS", sans-serif;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            border: none;
-            background: none;
-            box-shadow: none;
-            transition: color 0.25s ease;
-        }
-
-        .nav-buttons a:hover {
-            color: #1d6288 !important;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
     </style>
 </head>
 
-
 <body>
 
-<div class="container">
-
-
-    <!-- HEADER -->
-
-    <nav class="nav-buttons">
-        <a href="#about">ABOUT</a>
-        <a href="#work">WORK</a>
-        <a href="#projects">ENGINEERING PROJECTS</a>
-        <a href="#interests">INTERESTS</a>
-        <a href="#volunteer">VOLUNTEER</a>
-        <a href="#contact">CONTACT</a>
+    <nav class="top-navbar" role="navigation" aria-label="Main Navigation">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand" onclick="switchTab(event, 'home')">Shiza Rehman</a>
+            
+            <ul class="nav-pills" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" role="tab" id="tab-btn-home" aria-selected="true" aria-controls="home" onclick="switchTab(event, 'home')">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" role="tab" id="tab-btn-about" aria-selected="false" aria-controls="about" onclick="switchTab(event, 'about')">About Me</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" role="tab" id="tab-btn-work" aria-selected="false" aria-controls="work" onclick="switchTab(event, 'work')">Work</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" role="tab" id="tab-btn-projects" aria-selected="false" aria-controls="projects" onclick="switchTab(event, 'projects')">Engineering Projects</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" role="tab" id="tab-btn-volunteer" aria-selected="false" aria-controls="volunteer" onclick="switchTab(event, 'volunteer')">Volunteer</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" role="tab" id="tab-btn-contact" aria-selected="false" aria-controls="contact" onclick="switchTab(event, 'contact')">Contact</button>
+                </li>
+            </ul>
+        </div>
     </nav>
 
+    <div class="container">
 
-    <header>
-        <h1>Shiza Rehman</h1>
-        <p>Mechanical Engineering Student | Aspiring Health Tech Designer</p>
+        <header>
+            <h1>Shiza Rehman</h1>
+            <p>Mechanical Engineering Student | Aspiring Health Tech Designer</p>
+        </header>
 
-    </header>
+        <main>
+            <div id="home" class="tab-content active" role="tabpanel" aria-labelledby="tab-btn-home">
+                <section>
+                    <h2>Welcome</h2>
+                    <p>
+                        Hi there! My name is <strong>Shiza Rehman</strong>. I am a passionate mechanical engineering student studying at the University of Alberta with a strong interest in designing medical technology. I am eager to contribute to innovative solutions that improve patient care and health outcomes.
+                    </p>
+                </section>
+            </div>
 
-    <!--PROFESSIONAL SUMMARY-->
+            <div id="about" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-about">
+                <section>
+                    <h2>About Me</h2>
+                    <div class="experience">
+                        <p class="job-title"><b>I LOVE PAINTING!</b></p>
+                        <p>
+                            Outside of university, I enjoy painting and creating art. I find it to be a relaxing and fulfilling hobby that allows me to express my creativity. This past year, I had the opportunity to showcase my artwork on local transit buses running in Strathcona County, which was an exciting experience!
+                        </p>
+                    </div>
 
-    <section>
+                    <div class="experience">
+                        <p class="job-title"><b>I am passionate about volunteering.</b></p>
+                        <p>
+                            Another thing I enjoy in my free time is volunteering and giving back to my community. By volunteering at my local mosque, I have been able to make a positive impact on the lives of others and contribute to causes that I am passionate about.
+                        </p>
+                    </div>
 
-        <h2>About</h2>
+                    <div class="experience">
+                        <p class="job-title"><b>I enjoy photographing the outdoors.</b></p>
+                        <p>
+                            I also enjoy photography and capturing moments in time, especially sunsets and sunrises. I find it to be a rewarding hobby that allows me to explore my surroundings and appreciate the beauty of the world around me.
+                        </p>
+                    </div>
+                </section>
+            </div>
 
-        <p>
-            Passionate mechanical engineering student with a strong interest in designing medical technology. Eager to contribute to innovative solutions that improve patient care and outcomes.
-        </p>
+            <div id="work" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-work">
+                <section>
+                    <h2>Work Experience</h2>
 
-    </section>
+                    <div class="experience">
+                        <p class="date">SEPTEMBER 2026 – PRESENT</p>
+                        <p class="job-title">
+                            <b>Alberta Heart</b> — <i>Pumping Mechanism Team Member</i>
+                        </p>
+                        <ul>
+                            <li>Participate in team meetings to discuss project progress and address any questions or concerns.</li>
+                        </ul>
+                    </div>
 
-    <!-- WORK EXPERIENCE -->
+                    <div class="experience">
+                        <p class="date">MAY 2026 – AUGUST 2026</p>
+                        <p class="job-title">
+                            <b>Aspen Trails Veterinary Clinic</b> — <i>Front Desk Receptionist</i>
+                        </p>
+                        <ul>
+                            <li>Sanitized and prepared examination rooms between appointments.</li>
+                            <li>Organized and restocked blankets, towels, and other examination-room supplies.</li>
+                            <li>Checked in an average of 8 patients per day, recorded their weights upon arrival, and assisted clients with appointment-related inquiries.</li>
+                            <li>Processed client purchases for medications, examinations, food, treats, and vaccinations, including handling cash and closing the clinic.</li>
+                            <li>Maintained 100% accuracy when processing billing and updating client records.</li>
+                            <li>Contacted clients to remind them of upcoming appointments and the refund policy.</li>
+                            <li>Received phone calls to address client questions and concerns with a friendly and helpful demeanour.</li>
+                            <li>Prepared and provided vaccine certificates for clients.</li>
+                        </ul>
+                    </div>
 
-    <section id="work">
+                    <div class="experience">
+                        <p class="date">DECEMBER 2020 – JANUARY 2021</p>
+                        <p class="job-title">
+                            <b>Snow Removal Service, Aspen Trails</b> — <i>Self-Employed Shoveler</i>
+                        </p>
+                        <ul>
+                            <li>Provided snow removal services for local residents, including shoveling, scraping, de-icing, and salting.</li>
+                            <li>Coordinated with team members to efficiently clear sidewalks and driveways.</li>
+                            <li>Communicated with customers by phone and text to coordinate service times and requirements.</li>
+                            <li>Promoted the service through social media advertising with the help of team members.</li>
+                            <li>Built rapport with customers through reliable service, meeting or exceeding expectations.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
 
-        <h2>Work Experience</h2>
+            <div id="projects" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-projects">
+                <section>
+                    <h2>Engineering Projects</h2>
 
+                    <div class="experience">
+                        <p class="date">AUGUST 2026</p>
+                        <p class="project-name">
+                            <b>SolidWorks Personal Design Project</b> — <i>The Gripper</i>
+                        </p>
+                        <ul>
+                            <li>My first completed personal project in SolidWorks. I followed a tutorial by RoboCad on YouTube to create the model. Through this, I gained valuable hands-on experience with fundamental CAD features and assembly design in SolidWorks.</li>
+                        </ul>
+                        <video controls>
+                            <source src="./gripper-demo.mp4" type="video/mp4">
+                            Your browser cannot play this video.
+                        </video>
+                    </div>
+                </section>
+            </div>
 
-        <div class="experience">
+            <div id="volunteer" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-volunteer">
+                <section>
+                    <h2>Volunteering & Community Involvement</h2>
 
-            <p class="date">SEPTEMBER 2026 – PRESENT</p>
+                    <div class="experience">
+                        <p class="date">MARCH 2023 – PRESENT</p>
+                        <p class="job-title">
+                            <b>Community Events, Masjid In the Park</b> — <i>Volunteer in Ambassadors of the Park</i>
+                        </p>
+                        <ul>
+                            <li>Volunteered in hosting seniors' visits and tours of the mosque.</li>
+                            <li>Decorated the mosque with lights and decorations for Ramadan each year.</li>
+                            <li>Participated with other community members in routine cleaning of the mosque, including dusting, sweeping, and removing trash.</li>
+                        </ul>
+                    </div>
 
-            <p class="job-title">
-                <b>Alberta Heart</b>
-                — <i>Pumping Mechanism Team Member</i>
-            </p>
+                    <div class="experience">
+                        <p class="date">JUNE 2023 – PRESENT</p>
+                        <p class="job-title">
+                            <b>Project Planning Committee, Masjid In the Park</b> — <i>Community Volunteer</i>
+                        </p>
+                        <ul>
+                            <li>Assist in planning, setting up, and executing Paint Night, Winter Carnival, Women's Social Night, and other community events.</li>
+                            <li>Helped organize and execute the July 2026 Open House, which attracted 200+ attendees.</li>
+                            <li>Assist with planning and operating bake sale fundraisers, including preparing baked goods, creating promotional posters, and accurately processing cash and card transactions.</li>
+                            <li>Greet community members at bake sale fundraisers and answer questions about baked goods and pricing.</li>
+                            <li>Support the Children's Program every Ramadan by supervising and assisting children during Friday and Saturday night prayers.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
 
-            <ul>
-                <li>Participate in team meetings to discuss project progress and address any questions or concerns.</li>
-            </ul>
+            <div id="contact" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-contact">
+                <section>
+                    <h2>Get In Touch</h2>
+                    <p>Feel free to reach out to discuss engineering opportunities, health tech design, or creative collaborations!</p>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <h3>Email</h3>
+                            <a href="mailto:shiza@example.com">shiza@ualberta.ca</a>
+                        </div>
+                        <div class="contact-card">
+                            <h3>Location</h3>
+                            <p>Edmonton / Strathcona County, AB</p>
+                        </div>
+                        <div class="contact-card">
+                            <h3>LinkedIn</h3>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
 
-        </div>
+        <footer>
+            © 2026 Shiza Rehman • Portfolio
+        </footer>
 
+    </div>
 
+    <script>
+        function switchTab(event, targetTabId) {
+            if (event) {
+                event.preventDefault();
+            }
 
-        <div class="experience">
+            // Hide all tab content sections
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
 
-            <p class="date">MAY 2026 – AUGUST 2026</p>
+            // Deactivate all navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                link.setAttribute('aria-selected', 'false');
+            });
 
-            <p class="job-title">
-                <b>Aspen Trails Veterinary Clinic</b>
-                — <i>Front Desk Receptionist</i>
-            </p>
+            // Activate target tab content
+            const selectedTab = document.getElementById(targetTabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
 
-            <ul>
-                <li>Sanitized and prepared examination rooms between appointments.</li>
+            // Activate target button
+            const selectedBtn = document.getElementById('tab-btn-' + targetTabId);
+            if (selectedBtn) {
+                selectedBtn.classList.add('active');
+                selectedBtn.setAttribute('aria-selected', 'true');
+                
+                // Scroll pill into view smoothly if overflowed on mobile
+                selectedBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
 
-                <li>Organized and restocked blankets, towels, and other examination-room supplies.</li>
+            // Update URL hash without causing full page jump
+            if (history.pushState) {
+                history.pushState(null, null, '#' + targetTabId);
+            } else {
+                window.location.hash = '#' + targetTabId;
+            }
 
-                <li>Checked in an average of 8 patients per day, recorded their weights upon arrival, and assisted clients with appointment-related inquiries.</li>
+            // Scroll gently to top of content container on tab switch
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-                <li>Processed client purchases for medications, examinations, food, treats, and vaccinations, including handling cash and closing the clinic.</li>
-
-                <li>Maintained 100% accuracy when processing billing and updating client records.</li>
-
-                <li>Contacted clients to remind them of upcoming appointments and the refund policy.</li>
-
-                <li>Received phone calls to address client questions and concerns with a friendly and helpful demeanour.</li>
-
-                <li>Prepared and provided vaccine certificates for clients.</li>
-            </ul>
-
-        </div>
-
-
-
-        <div class="experience">
-
-            <p class="date">DECEMBER 2020 – JANUARY 2021</p>
-
-            <p class="job-title">
-                <b>Snow Removal Service, Aspen Trails</b>
-                — <i>Self-Employed Shoveler</i>
-            </p>
-
-            <ul>
-                <li>Provided snow removal services for local residents, including shoveling, scraping, de-icing, and salting.</li>
-
-                <li>Coordinated with team members to efficiently clear sidewalks and driveways.</li>
-
-                <li>Communicated with customers by phone and text to coordinate service times and requirements.</li>
-
-                <li>Promoted the service through social media advertising with the help of team members.</li>
-
-                <li>Built rapport with customers through reliable service, meeting or exceeding expectations.</li>
-            </ul>
-
-        </div>
-
-    </section>
-
-    
-    <!-- ENGINEERING PROJECTS -->
-    
-    <section id="projects">
-
-        <h2>Engineering Projects</h2>
-
-        <div class="experience">
-
-            <p class="date">AUGUST 2026</p>
-
-            <p class="project-name">
-                <b>SolidWorks Personal Design Project</b>
-                — <i>The Gripper</i>
-            </p>
-
-            <ul>
-                <li> My first completed personal project in SolidWorks. I followed a tutorial by RoboCad on YouTube to create the model. 
-                    Through this, I gained valuable hands-on experience with fundamental CAD features and assembly design in SolidWorks.</li>
-            </ul>
-            <video controls width="700">
-                <source src="./gripper-demo.mp4" type="video/mp4">
-                Your browser cannot play this video.
-            </video>
+        // Handle browser Back/Forward navigation & direct URL deep links
+        function handleHashChange() {
+            const hash = window.location.hash.replace('#', '');
+            const validTabs = ['home', 'about', 'work', 'projects', 'volunteer', 'contact'];
             
-        </div>
+            if (hash && validTabs.includes(hash)) {
+                switchTab(null, hash);
+            } else {
+                switchTab(null, 'home');
+            }
+        }
 
-    </section>
-
-    <!-- VOLUNTEER EXPERIENCE -->
-
-    <section id="volunteer">
-
-        <h2>Volunteering And Involvement</h2>
-
-
-        <div class="experience">
-
-            <p class="date">MARCH 2023 – PRESENT</p>
-
-            <p class="job-title">
-                <b>Community Events, Masjid In the Park</b>
-                — <i>Volunteer in Ambassadors of the Park</i>
-            </p>
-
-            <ul>
-
-                <li>Volunteered in hosting seniors' visits and tours of the mosque.</li>
-
-                <li>Decorated the mosque with lights and decorations for Ramadan each year.</li>
-
-                <li>Participated with other community members in routine cleaning of the mosque, including dusting, sweeping, and removing trash.</li>
-
-            </ul>
-
-        </div>
-
-
-
-        <div class="experience">
-
-            <p class="date">JUNE 2023 – PRESENT</p>
-
-            <p class="job-title">
-                <b>Project Planning Committee, Masjid In the Park</b>
-                — <i>Community Volunteer</i>
-            </p>
-
-            <ul>
-
-                <li>Assist in planning, setting up, and executing Paint Night, Winter Carnival, Women's Social Night, and other community events.</li>
-
-                <li>Helped organize and execute the July 2026 Open House, which attracted 200+ attendees.</li>
-
-                <li>Assist with planning and operating bake sale fundraisers, including preparing baked goods, creating promotional posters, and accurately processing cash and card transactions.</li>
-
-                <li>Greet community members at bake sale fundraisers and answer questions about baked goods and pricing.</li>
-
-                <li>Support the Children's Program every Ramadan by supervising and assisting children during Friday and Saturday night prayers.</li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-
-
-    <footer>
-        © 2026 Shiza Rehman
-    </footer>
-
-
-</div>
-
+        window.addEventListener('DOMContentLoaded', handleHashChange);
+        window.addEventListener('popstate', handleHashChange);
+    </script>
 </body>
 </html>
