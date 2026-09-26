@@ -291,7 +291,7 @@
             height: 36px;
             border-radius: 50%;
             cursor: pointer;
-            z-index: 10;
+            z-index: 20;
             font-size: 14px;
             display: flex;
             align-items: center;
@@ -771,7 +771,34 @@
             if (currentPhotoSlide < 0) currentPhotoSlide = totalPhotoSlides - 1;
             if (currentPhotoSlide >= totalPhotoSlides) currentPhotoSlide = 0;
             updatePhotoCarousel();
-}
+
+        function goToPhotoSlide(index) {
+        currentPhotoSlide = index;
+        updatePhotoCarousel();
+    }
+
+        function updatePhotoCarousel() {
+            var track = document.getElementById('photoTrack');
+            var counter = document.getElementById('photoCounter');
+            var dots = document.querySelectorAll('#photoDots .dot');
+
+            if (track) {
+                track.style.transform = 'translateX(-' + (currentPhotoSlide * 100) + '%)';
+            }
+            if (counter) {
+                counter.textContent = (currentPhotoSlide + 1) + ' / ' + totalPhotoSlides;
+            }
+            if (dots.length > 0) {
+                dots.forEach(function(dot, index) {
+                    if (index === currentPhotoSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+        }
+    }
 
         window.addEventListener('DOMContentLoaded', handleHashChange);
         window.addEventListener('popstate', handleHashChange);
