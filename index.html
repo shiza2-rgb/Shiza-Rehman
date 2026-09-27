@@ -255,7 +255,7 @@
 
         .carousel-slide {
             min-width: 100%;
-            height: 100%; /* Adjust height if you want taller or shorter photos */
+            height: 480 px; /* Adjust height if you want taller or shorter photos */
         }
 
         .carousel-slide img {
@@ -521,6 +521,48 @@
                         </div>
                     </div>
                     </div>
+                    <script>
+                        window.currentPhotoSlide = 0;
+                        window.totalPhotoSlides = 2;
+
+                        window.movePhotoSlide = function(direction) {
+                            window.currentPhotoSlide += direction;
+                            if (window.currentPhotoSlide < 0) {
+                                window.currentPhotoSlide = window.totalPhotoSlides - 1;
+                            }
+                            if (window.currentPhotoSlide >= window.totalPhotoSlides) {
+                                window.currentPhotoSlide = 0;
+                            }
+                            window.updatePhotoCarousel();
+                        };
+
+                        window.goToPhotoSlide = function(index) {
+                            window.currentPhotoSlide = index;
+                            window.updatePhotoCarousel();
+                        };
+
+                        window.updatePhotoCarousel = function() {
+                            var track = document.getElementById('photoTrack');
+                            var counter = document.getElementById('photoCounter');
+                            var dots = document.querySelectorAll('#photoDots .dot');
+
+                            if (track) {
+                                track.style.transform = 'translateX(-' + (window.currentPhotoSlide * 100) + '%)';
+                            }
+                            if (counter) {
+                                counter.textContent = (window.currentPhotoSlide + 1) + ' / ' + window.totalPhotoSlides;
+                            }
+                            if (dots.length > 0) {
+                                dots.forEach(function(dot, idx) {
+                                    if (idx === window.currentPhotoSlide) {
+                                        dot.classList.add('active');
+                                    } else {
+                                        dot.classList.remove('active');
+                                    }
+                                });
+                            }
+                        };
+</script>
 
                     <div class="experience">
                         <p class="job-title"><b>MY SPIRITUALITY AND VALUES</b></p>
