@@ -327,7 +327,124 @@
                 padding: 25px 20px;
             }
         }
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto 0 auto;
+            overflow: hidden;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            background: #000;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-family: sans-serif;
+            backdrop-filter: blur(4px);
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.85);
+            color: #243447;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: #ffffff;
+        }
+
+        .prev-btn { left: 12px; }
+        .next-btn { right: 12px; }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .dot.active {
+            background: #3da2e0;
+            transform: scale(1.2);
+        }
     </style>
+
+    <!-- CAROUSEL SCRIPT -->
+    <script>
+        let slideIndex = 0;
+
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const dots = document.querySelectorAll('.carousel-dots .dot');
+            track.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+            dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === slideIndex);
+            });
+        }
+
+        function moveSlide(step) {
+            const totalSlides = document.querySelectorAll('.carousel-slide').length;
+            slideIndex = (slideIndex + step + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function currentSlide(index) {
+            slideIndex = index;
+            updateCarousel();
+        }
+    </script>
 </head>
 
 <body>
@@ -347,10 +464,10 @@
                     <button class="nav-link" role="tab" id="tab-btn-work" aria-selected="false" aria-controls="work" onclick="switchTab(event, 'work')">Work</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" role="tab" id="tab-btn-projects" aria-selected="false" aria-controls="projects" onclick="switchTab(event, 'projects')">Engineering Projects</button>
+                    <button class="nav-link" role="tab" id="tab-btn-projects" aria-selected="false" aria-controls="projects" onclick="switchTab(event, 'projects')">Projects</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" role="tab" id="tab-btn-volunteer" aria-selected="false" aria-controls="volunteer" onclick="switchTab(event, 'volunteer')">Volunteer</button>
+                    <button class="nav-link" role="tab" id="tab-btn-volunteer" aria-selected="false" aria-controls="volunteer" onclick="switchTab(event, 'volunteer')">Education And Awards</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" role="tab" id="tab-btn-contact" aria-selected="false" aria-controls="contact" onclick="switchTab(event, 'contact')">Contact</button>
@@ -398,15 +515,56 @@
                     <div class="experience">
                         <p class="job-title"><b>MY LOVE FOR OUTDOOR PHOTOGRAPHY</b></p>
                         <p>
-                            I enjoy photography and capturing moments in time, such as sunsets and sunrises. I find it to be a rewarding hobby that allows me to explore my surroundings and appreciate the beauty of the world around me, especially while tra.
+                            I enjoy photography and capturing moments in time, such as sunsets and sunrises. I find it to be a rewarding hobby that allows me to explore my surroundings and appreciate the beauty of the world around me, especially while traveling.
+
                         </p>
                     </div>
 
                     <div class="experience">
-                        <p class="job-title"><b>MY SPIRITUALITY AND VALUES</b></p>
-                        <p>
-                            Another thing I enjoy in my free time is volunteering and giving back to my community. By volunteering at my local mosque, I have been able to make a positive impact on the lives of others and contribute to causes that I am passionate about.
+                        <p class="job-title"><b>MY SPIRITUALITY AND VALUES</b>
                         </p>
+                        <ul>
+                            <li>Another thing I enjoy in my free time is volunteering and giving back to my community. By volunteering at my local mosque, I have been able to make a positive impact on the lives of others and contribute to causes that I am passionate about.</li>
+                        </ul>
+                    <img src="madina.jpeg.jpeg" alt="Sunset picture taken in Madina, Saudi Arabia" style="width: 100%; max-width: 700px; border-radius: 12px; margin-top: 15px;">
+                    <img src="sunset.jpg" alt="Sunset picture taken in Edmonton, Alberta" style="width: 100%; max-width: 700px; border-radius: 12px; margin-top: 15px;">
+                
+                    </div>
+                    <div class="experience">
+                        <p class="job-title"><b>MY SPIRITUALITY AND VALUES</b>
+                        </p>
+                        <ul>
+                            <li>Another thing I enjoy in my free time is volunteering and giving back to my community. By volunteering at my local mosque, I have been able to make a positive impact on the lives of others and contribute to causes that I am passionate about.</li>
+                        </ul>
+
+                        <!-- INSTAGRAM CAROUSEL SLIDER -->
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="carouselTrack">
+                                
+                                <!-- Slide 1 -->
+                                <div class="carousel-slide">
+                                    <img src="madina.jpeg.jpeg" alt="Sunset picture taken in Madina, Saudi Arabia">
+                                    <div class="carousel-caption">📍 Madina, Saudi Arabia</div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="carousel-slide">
+                                    <img src="sunset.jpg" alt="Sunset picture taken in Edmonton, Alberta">
+                                    <div class="carousel-caption">📍 Edmonton, Alberta</div>
+                                </div>
+
+                            </div>
+
+                            <!-- Navigation Arrows -->
+                            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+
+                            <!-- Dots Indicator -->
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide(0)"></span>
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -490,7 +648,7 @@
 
             <div id="projects" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-projects">
                 <section>
-                    <h2>Engineering Projects</h2>
+                    <h2>Projects</h2>
 
                     <div class="experience">
                         <p class="date">AUGUST 2026</p>
