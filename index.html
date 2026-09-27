@@ -353,7 +353,7 @@
 
         .carousel-slide img {
             width: 100%;
-            height: 420px;
+            height: 100%;
             object-fit: cover;
             display: block;
         }
@@ -498,11 +498,39 @@
                 <section>
                     <h2>About Me</h2>
                     <div class="experience">
-                        <p class="job-title"><b>MY LOVE FOR ART</b></p>
-                        <p>
-                            Outside of university, I enjoy painting and creating art. I find it to be a relaxing and fulfilling hobby that allows me to express my creativity. This past year, I had the opportunity to showcase my artwork on local transit buses running in Strathcona County, which was an exciting experience! 
-                            Check out my artwork here: <a href="https://www.instagram.com/p/DTef9KUESfZ/?img_index=2" target="_blank" rel="noopener noreferrer">Arts in Public Places</a>.
+                        <p class="job-title"><b>MY LOVE FOR ART</b>
                         </p>
+                        <ul>
+                            <li>Outside of university, I enjoy painting and creating art. I find it to be a relaxing and fulfilling hobby that allows me to express my creativity. This past year, I had the opportunity to showcase my artwork on local transit buses running in Strathcona County, which was an exciting experience! 
+                                Check out my artwork here: <a href="https://www.instagram.com/p/DTef9KUESfZ/?img_index=2" target="_blank" rel="noopener noreferrer">Strathcona County Next Gen - Local Bus Art</a>. I often enjoy painting abstract art to decorate my living space in my free time.</li>
+                        </ul>
+                        <!-- INSTAGRAM CAROUSEL SLIDER -->
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="carouselTrack">
+                                
+                                <!-- Slide 1 -->
+                                <div class="carousel-slide">
+                                    <img src="wall_art.jpeg" alt="Wall art on my bedroom wall, painted by me recently">
+                                    <div class="carousel-caption">📍 Madina, Saudi Arabia</div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="carousel-slide">
+                                    <img src="sunset.jpg" alt="Sunset picture taken in Edmonton, Alberta">
+                                    <div class="carousel-caption">📍 Edmonton, Alberta</div>
+                                </div>
+
+                            </div>
+
+                            <!-- Navigation Arrows -->
+                            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+
+                            <!-- Dots Indicator -->
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide(0)"></span>
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                            </div>
                     </div>
 
                     <div class="experience">
@@ -547,51 +575,11 @@
                         </div>
                     </div>
                     
-
-                    <!---<div class="experience">
-                        <p class="job-title"><b>MY SPIRITUALITY AND VALUES</b>
-                        </p>
-                        <ul>
-                            <li>Most importantly, I value compassion and empathy in my interactions with others. Thanks to my Islamic faith and upbringing, I strive to treat everyone with kindness and understanding.</li>
-                        </ul>
-                            <img src="madina.jpeg.jpeg" alt="Sunset picture taken in Madina, Saudi Arabia" style="width: 100%; max-width: 700px; border-radius: 12px; margin-top: 15px;">
-                            <img src="sunset.jpg" alt="Sunset picture taken in Edmonton, Alberta" style="width: 100%; max-width: 700px; border-radius: 12px; margin-top: 15px;">
-                
-                    </div>-->
                     <div class="experience">
-                        <p class="job-title"><b>MY SPIRITUALITY AND VALUES</b>
-                        </p>
+                        <p class="job-title"><b>MY SPIRITUALITY AND VALUES</b></p>
                         <ul>
                             <li>Most importantly, I value compassion and empathy in my interactions with others. Thanks to my Islamic faith and upbringing, I strive to treat everyone with kindness and understanding.</li>
                         </ul>
-
-                        <!-- INSTAGRAM CAROUSEL SLIDER -->
-                        <div class="carousel-container">
-                            <div class="carousel-track" id="carouselTrack">
-                                
-                                <!-- Slide 1 -->
-                                <div class="carousel-slide">
-                                    <img src="madina.jpeg.jpeg" alt="Sunset picture taken in Madina, Saudi Arabia">
-                                    <div class="carousel-caption">📍 Madina, Saudi Arabia</div>
-                                </div>
-
-                                <!-- Slide 2 -->
-                                <div class="carousel-slide">
-                                    <img src="sunset.jpg" alt="Sunset picture taken in Edmonton, Alberta">
-                                    <div class="carousel-caption">📍 Edmonton, Alberta</div>
-                                </div>
-
-                            </div>
-
-                            <!-- Navigation Arrows -->
-                            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-                            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
-
-                            <!-- Dots Indicator -->
-                            <div class="carousel-dots">
-                                <span class="dot active" onclick="currentSlide(0)"></span>
-                                <span class="dot" onclick="currentSlide(1)"></span>
-                            </div>
                         </div>
                     </div>
                 </section>
