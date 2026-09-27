@@ -237,101 +237,6 @@
         .job-title b, .project-name b {
             color: var(--primary-blue);
         }
-        .insta-carousel {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: 18px auto 0;
-            overflow: hidden;
-            border-radius: 14px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-            touch-action: pan-y;
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            height: 480 px; /* Adjust height if you want taller or shorter photos */
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Number badge on top right (1/2) */
-        .carousel-counter {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(0, 0, 0, 0.65);
-            color: #ffffff;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 10;
-            backdrop-filter: blur(4px);
-        }
-
-        /* Glassmorphism Arrow Buttons */
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.85);
-            color: #243447;
-            border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 20;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            transition: background 0.2s ease;
-        }
-
-        .carousel-btn:hover {
-            background: #ffffff;
-        }
-
-        .prev-btn { left: 10px; }
-        .next-btn { right: 10px; }
-
-        /* Dots at bottom */
-        .carousel-dots {
-            position: absolute;
-            bottom: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 6px;
-            z-index: 10;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-
-        .dot.active {
-            background: #ffffff;
-            width: 10px;
-            height: 10px;
-        }
 
         ul {
             padding-left: 22px;
@@ -439,13 +344,13 @@
                     <button class="nav-link" role="tab" id="tab-btn-about" aria-selected="false" aria-controls="about" onclick="switchTab(event, 'about')">About Me</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" role="tab" id="tab-btn-experience" aria-selected="false" aria-controls="experience" onclick="switchTab(event, 'experience')">Experience</button>
+                    <button class="nav-link" role="tab" id="tab-btn-work" aria-selected="false" aria-controls="work" onclick="switchTab(event, 'work')">Work</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" role="tab" id="tab-btn-projects" aria-selected="false" aria-controls="projects" onclick="switchTab(event, 'projects')">Engineering Projects</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" role="tab" id="tab-btn-education" aria-selected="false" aria-controls="education" onclick="switchTab(event, 'education')">Education And Awards</button>
+                    <button class="nav-link" role="tab" id="tab-btn-volunteer" aria-selected="false" aria-controls="volunteer" onclick="switchTab(event, 'volunteer')">Education And Awards</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" role="tab" id="tab-btn-contact" aria-selected="false" aria-controls="contact" onclick="switchTab(event, 'contact')">Contact</button>
@@ -475,108 +380,39 @@
             <div id="about" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-about">
                 <section>
                     <h2>About Me</h2>
-                    <div class="about-me">
-                        <p class="about-text"><b>MY LOVE FOR ART</b></p>
+                    <div class="experience">
+                        <p class="job-title"><b>MY LOVE FOR ART</b></p>
                         <p>
                             Outside of university, I enjoy painting and creating art. I find it to be a relaxing and fulfilling hobby that allows me to express my creativity. This past year, I had the opportunity to showcase my artwork on local transit buses running in Strathcona County, which was an exciting experience! 
-                            Check out my artwork here: <a href="https://www.instagram.com/p/DTef9KUESfZ/?img_index=2" target="_blank" rel="noopener noreferrer">Strathcona County Next Gen | Young Artists In Motion</a>.
+                            Check out my artwork here: <a href="https://www.instagram.com/p/DTef9KUESfZ/?img_index=2" target="_blank" rel="noopener noreferrer">Arts in Public Places</a>.
                         </p>
                     </div>
 
-                    <div class="about-me">
-                        <p class="about-text"><b>MY PASSION FOR VOLUNTEERING</b></p>
+                    <div class="experience">
+                        <p class="job-title"><b>MY PASSION FOR VOLUNTEERING</b></p>
                         <p>
                             Another thing I enjoy in my free time is volunteering and giving back to my community. By volunteering at my local mosque, I have been able to make a positive impact on the lives of others and contribute to causes that I am passionate about.
                         </p>
                     </div>
 
-                    <div class="about-me">
-                        <p class="about-text"><b>MY LOVE FOR OUTDOOR PHOTOGRAPHY</b></p>
+                    <div class="experience">
+                        <p class="job-title"><b>MY LOVE FOR OUTDOOR PHOTOGRAPHY</b></p>
                         <p>
                             I enjoy photography and capturing moments in time, such as sunsets and sunrises. I find it to be a rewarding hobby that allows me to explore my surroundings and appreciate the beauty of the world around me, especially while traveling.
+                            <img src="madina.jpeg.jpeg" alt="Taken in Madina, Saudi Arabia" style="width: 100%; max-width: 600px; border-radius: 12px; margin-top: 15px;">
                         </p>
                     </div>
-                    <div class="about-me">
-                        <p class="about-text"><b>MY SPIRITUALITY AND FAITH</b></p>
+
+                    <div class="experience">
+                        <p class="job-title"><b>MY SPIRITUALITY AND VALUES</b></p>
                         <p>
-                            Most importantly, I believe that spirituality and values are the foundation of a meaningful life. My Islamic faith guides me in making decisions and treating others with respect and compassion, and it even helps me stay grounded and focused on what truly matters in life. I strive to live by these values every day, and I believe that they are essential for personal growth and fulfillment.
-
+                            Another thing I enjoy in my free time is volunteering and giving back to my community. By volunteering at my local mosque, I have been able to make a positive impact on the lives of others and contribute to causes that I am passionate about.
                         </p>
                     </div>
+                </section>
+            </div>
 
-                        <!-- INSTAGRAM-STYLE CAROUSEL -->
-                        <div class="insta-carousel" id="photoCarousel">
-                            <div class="carousel-counter" id="photoCounter">1 / 2</div>
-                            
-                            <div class="carousel-track" id="photoTrack">
-                                <div class="carousel-slide">
-                                    <img src="madina.jpeg.jpeg" alt="Taken in Madina, Saudi Arabia">
-                                </div>
-                                <div class="carousel-slide">
-                                    <img src="sunrise.jpeg" alt="Sunrise at University of Alberta campus">
-                                </div>
-                            </div>
-
-                            <!-- Buttons -->
-                            <button type="button" class="carousel-btn prev-btn" onclick="movePhotoSlide(-1)">&#10094;</button>
-                            <button type="button" class="carousel-btn next-btn" onclick="movePhotoSlide(1)">&#10095;</button>
-
-                            <!-- Dots -->
-                            <div class="carousel-dots" id="photoDots">
-                                <span class="dot active" onclick="goToPhotoSlide(0)"></span>
-                                <span class="dot" onclick="goToPhotoSlide(1)"></span>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                <script>
-                    window.currentPhotoSlide = 0;
-                    window.totalPhotoSlides = 2;
-
-                    window.movePhotoSlide = function(direction) {
-                    window.currentPhotoSlide += direction;
-                    if (window.currentPhotoSlide < 0) {
-                        window.currentPhotoSlide = window.totalPhotoSlides - 1;
-                            }
-                            if (window.currentPhotoSlide >= window.totalPhotoSlides) {
-                                window.currentPhotoSlide = 0;
-                            }
-                            window.updatePhotoCarousel();
-                        };
-
-                        window.goToPhotoSlide = function(index) {
-                            window.currentPhotoSlide = index;
-                            window.updatePhotoCarousel();
-                        };
-
-                        window.updatePhotoCarousel = function() {
-                            var track = document.getElementById('photoTrack');
-                            var counter = document.getElementById('photoCounter');
-                            var dots = document.querySelectorAll('#photoDots .dot');
-
-                            if (track) {
-                                track.style.transform = 'translateX(-' + (window.currentPhotoSlide * 100) + '%)';
-                            }
-                            if (counter) {
-                                counter.textContent = (window.currentPhotoSlide + 1) + ' / ' + window.totalPhotoSlides;
-                            }
-                            if (dots.length > 0) {
-                                dots.forEach(function(dot, idx) {
-                                    if (idx === window.currentPhotoSlide) {
-                                        dot.classList.add('active');
-                                    } else {
-                                        dot.classList.remove('active');
-                                    }
-                                });
-                            }
-                        };
-                </script>
-            </section>
-            
-
-
-            
-            <div id="experience" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-experience">
+            <div id="work" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-work">
                 <section>
                     <h2>Work Experience</h2>
 
@@ -722,9 +558,41 @@
                 </section>
             </div>
 
+            <div id="volunteer" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-volunteer">
+                <section>
+                    <h2>Volunteering & Community Involvement</h2>
+
+                    <div class="experience">
+                        <p class="date">MARCH 2023 – PRESENT</p>
+                        <p class="job-title">
+                            <b>Community Events, Masjid In the Park</b> — <i>Volunteer in Ambassadors of the Park</i>
+                        </p>
+                        <ul>
+                            <li>Volunteered in hosting seniors' visits and tours of the mosque.</li>
+                            <li>Decorated the mosque with lights and decorations for Ramadan each year.</li>
+                            <li>Participated with other community members in routine cleaning of the mosque, including dusting, sweeping, and removing trash.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience">
+                        <p class="date">JUNE 2023 – PRESENT</p>
+                        <p class="job-title">
+                            <b>Project Planning Committee, Masjid In the Park</b> — <i>Community Volunteer</i>
+                        </p>
+                        <ul>
+                            <li>Assist in planning, setting up, and executing Paint Night, Winter Carnival, Women's Social Night, and other community events.</li>
+                            <li>Helped organize and execute the July 2026 Open House, which attracted 200+ attendees.</li>
+                            <li>Assist with planning and operating bake sale fundraisers, including preparing baked goods, creating promotional posters, and accurately processing cash and card transactions.</li>
+                            <li>Greet community members at bake sale fundraisers and answer questions about baked goods and pricing.</li>
+                            <li>Support the Children's Program every Ramadan by supervising and assisting children during Friday and Saturday night prayers.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
             <div id="contact" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-contact">
                 <section>
-                    <h2>Let's Chat</h2>
+                    <h2>Get In Touch</h2>
                     <p>Feel free to reach out to discuss engineering opportunities, health tech design, or creative collaborations!</p>
                     
                     <div class="contact-grid">
@@ -734,10 +602,9 @@
                         </div>
 
                         <div class="contact-card">
-                            <h3>Phone Number</h3>
-                            <a href="tel:+1234567890">+1 (587) xxx-xxxx</a>
-                        </div>
-
+                            <h3>P</h3>
+                            <a href="
+                        
                         <div class="contact-card">
                             <h3>LinkedIn</h3>
                             <a href="https://www.linkedin.com/in/shiza-rehman-7538603a2/" target="_blank" rel="noopener noreferrer">Let's Connect on LinkedIn!</a>
@@ -802,7 +669,7 @@
         // Handle browser Back/Forward navigation & direct URL deep links
         function handleHashChange() {
             const hash = window.location.hash.replace('#', '');
-            const validTabs = ['home', 'about', 'experience', 'projects', 'volunteer', 'contact'];
+            const validTabs = ['home', 'about', 'work', 'projects', 'volunteer', 'contact'];
             
             if (hash && validTabs.includes(hash)) {
                 switchTab(null, hash);
@@ -810,39 +677,6 @@
                 switchTab(null, 'home');
             }
         }
-        function movePhotoSlide(direction) {
-            currentPhotoSlide += direction;
-            if (currentPhotoSlide < 0) currentPhotoSlide = totalPhotoSlides - 1;
-            if (currentPhotoSlide >= totalPhotoSlides) currentPhotoSlide = 0;
-            updatePhotoCarousel();
-
-        function goToPhotoSlide(index) {
-        currentPhotoSlide = index;
-        updatePhotoCarousel();
-    }
-
-        function updatePhotoCarousel() {
-            var track = document.getElementById('photoTrack');
-            var counter = document.getElementById('photoCounter');
-            var dots = document.querySelectorAll('#photoDots .dot');
-
-            if (track) {
-                track.style.transform = 'translateX(-' + (currentPhotoSlide * 100) + '%)';
-            }
-            if (counter) {
-                counter.textContent = (currentPhotoSlide + 1) + ' / ' + totalPhotoSlides;
-            }
-            if (dots.length > 0) {
-                dots.forEach(function(dot, index) {
-                    if (index === currentPhotoSlide) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-            }
-        }
-    }
 
         window.addEventListener('DOMContentLoaded', handleHashChange);
         window.addEventListener('popstate', handleHashChange);
