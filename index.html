@@ -419,51 +419,6 @@
             transform: scale(1.2);
         }
     </style>
-
-    <!-- CAROUSEL SCRIPT -->
-    <script>
-    document.querySelectorAll('.carousel-container').forEach((carousel) => {
-        let slideIndex = 0;
-
-            const track = carousel.querySelector('[id^="carouselTrack"]');
-            const slides = carousel.querySelectorAll('.carousel-slide');
-            const dots = carousel.querySelectorAll('.carousel-dots .dot');
-            const totalSlides = slides.length;
-
-            function updateCarousel() {
-                if (track) {
-                    track.style.transform = `translateX(-${slideIndex * 100}%)`;
-                }
-
-                dots.forEach((dot, idx) => {
-                    dot.classList.toggle('active', idx === slideIndex);
-                });
-        }
-        const prevBtn = carousel.querySelector('.prev-btn');
-        const nextBtn = carousel.querySelector('.next-btn');
-
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                slideIndex = (slideIndex + 1) % totalSlides;
-                updateCarousel();
-            });
-        }
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-                updateCarousel();
-            });
-        }
-
-        dots.forEach((carouselDot, idx) => {
-            carouselDot.addEventListener('click', () => {
-                slideIndex = idx;
-                updateCarousel();
-            });
-        });
-    });
-    </script>
 </head>
 
 <body>
@@ -902,6 +857,50 @@
 
         window.addEventListener('DOMContentLoaded', handleHashChange);
         window.addEventListener('popstate', handleHashChange);
+    </script>
+    <!-- CAROUSEL SCRIPT -->
+    <script>
+    document.querySelectorAll('.carousel-container').forEach((carousel) => {
+        let slideIndex = 0;
+
+            const track = carousel.querySelector('[id^="carouselTrack"]');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const dots = carousel.querySelectorAll('.carousel-dots .dot');
+            const totalSlides = slides.length;
+
+            function updateCarousel() {
+                if (track) {
+                    track.style.transform = `translateX(-${slideIndex * 100}%)`;
+                }
+
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === slideIndex);
+                });
+        }
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                slideIndex = (slideIndex + 1) % totalSlides;
+                updateCarousel();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            });
+        }
+
+        dots.forEach((carouselDot, idx) => {
+            carouselDot.addEventListener('click', () => {
+                slideIndex = idx;
+                updateCarousel();
+            });
+        });
+    });
     </script>
 </body>
 </html>
