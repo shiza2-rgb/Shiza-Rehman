@@ -432,9 +432,6 @@
                     <button class="nav-link active" role="tab" id="tab-btn-home" aria-selected="true" aria-controls="home" onclick="switchTab(event, 'home')">Home</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" role="tab" id="tab-btn-interests" aria-selected="false" aria-controls="interests" onclick="switchTab(event, 'interests')">Interests</button>
-                </li>
-                <li class="nav-item" role="presentation">
                     <button class="nav-link" role="tab" id="tab-btn-work" aria-selected="false" aria-controls="work" onclick="switchTab(event, 'work')">Work</button>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -442,6 +439,9 @@
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" role="tab" id="tab-btn-education" aria-selected="false" aria-controls="education" onclick="switchTab(event, 'education')">Education And Awards</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" role="tab" id="tab-btn-interests" aria-selected="false" aria-controls="interests" onclick="switchTab(event, 'interests')">Interests</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" role="tab" id="tab-btn-contact" aria-selected="false" aria-controls="contact" onclick="switchTab(event, 'contact')">Contact</button>
@@ -456,125 +456,6 @@
             <p>Mechanical Engineering Student | Aspiring Health Tech Designer</p>
         </header>
 
-        <main>
-            <div id="home" class="tab-content active" role="tabpanel" aria-labelledby="tab-btn-home">
-                <section>
-                    <h2>Welcome!</h2>
-                    <p>
-                        My name is <strong>Shiza</strong> and I am a passionate mechanical engineering student studying at the University of Alberta, with a strong interest 
-                        in designing medical technology. I am eager to contribute to innovative solutions that improve patient care and health outcomes.
-                    </p>
-                </section>
-            </div>
-        
-            <div id="interests" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-interests">
-                <section>
-                    <h2>Interests</h2>
-                    <div class="experience">
-                        <p class="job-title"><b>MY LOVE FOR ART</b>
-                        </p>
-                        <ul>
-                            <li>Outside of university, I enjoy painting and creating art. I find it to be a relaxing and fulfilling hobby that allows me to express my creativity. This past year, I had the opportunity to showcase my artwork on local transit buses running in Strathcona County, which was an exciting experience! 
-                                Check out my artwork here: <a href="https://www.instagram.com/p/DTef9KUESfZ/?img_index=2" target="_blank" rel="noopener noreferrer">Strathcona County Next Gen - Local Bus Art</a>. I often enjoy painting abstract art to decorate my living space in my free time.</li>
-                        </ul>
-                        <!-- INSTAGRAM CAROUSEL SLIDER -->
-                        <div class="carousel-container">
-                            <div class="carousel-track" id="carouselTrack">
-                                
-                                <!-- Slide 1 -->
-                                <div class="carousel-slide">
-                                    <img src="wall_art.jpeg" alt="Artwork on my bedroom wall">
-                                    <div class="carousel-caption">Artwork on my bedroom wall</div>
-                                </div>
-
-                                <!-- Slide 2 -->
-                                <div class="carousel-slide">
-                                    <img src="Allah_art.jpg" alt="Framed artwork of the word 'Allah' in Arabic calligraphy">
-                                    <div class="carousel-caption">Framed artwork of the word 'Allah' in Arabic calligraphy</div>
-                                </div>
-                            </div>
-
-                            <!-- Navigation Arrows -->
-                            <button class="carousel-btn prev-btn">&#10094;</button>
-                            <button class="carousel-btn next-btn">&#10095;</button>
-
-                            <!-- Dots Indicator -->
-                            <div class="carousel-dots">
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience">
-                        <p class="job-title"><b>MY PASSION FOR VOLUNTEERING</b></p>
-                        <ul>
-                            <li>Another thing I enjoy in my free time is volunteering and giving back to my community. By volunteering at my local mosque, I have been able to make a positive impact on the lives of others and contribute to causes that I am passionate about.
-                                To learn more, check out what our mosque has been up to here: <a href="https://www.instagram.com/masjidinthepark/" target="_blank" rel="noopener noreferrer">Masjid In the Park - Community Events</a>.</li>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="experience">
-                        <p class="job-title"><b>MY LOVE FOR OUTDOOR PHOTOGRAPHY</b></p>
-                        <ul>
-                            <li>I enjoy photography and capturing moments in time, such as sunsets and sunrises. I find it to be a rewarding hobby that allows me to explore my surroundings and appreciate the beauty of the world around me.</li>
-                        </ul>
-                        <!-- INSTAGRAM CAROUSEL SLIDER -->
-                        <div class="carousel-container">
-                            <div class="carousel-track" id="carouselTrack">
-                                
-                                <!-- Slide 1 -->
-                                <div class="carousel-slide">
-                                    <img src="madina.jpeg.jpeg" alt="Sunset picture taken in Madina, Saudi Arabia">
-                                    <div class="carousel-caption">📍 Madina, Saudi Arabia</div>
-                                </div>
-
-                                <!-- Slide 2 -->
-                                <div class="carousel-slide">
-                                    <img src="sunrise.jpeg" alt="Sunrise picture taken in Edmonton, Alberta, on the University of Alberta campus">
-                                    <div class="carousel-caption">📍 Edmonton, Alberta, University of Alberta</div>
-                                </div>
-
-                                <!-- Slide 3 -->
-                                <div class="carousel-slide">
-                                    <img src="kelowna_sunset.jpeg" alt="Sunset picture taken in Kelowna, British Columbia">
-                                    <div class="carousel-caption">📍 Kelowna, British Columbia</div>
-                                </div>
-
-                                 <!-- Slide 4 -->
-                                <div class="carousel-slide">
-                                    <img src="backyard_sunset.jpeg" alt="Sunset picture taken in Sherwood Park, Alberta">
-                                    <div class="carousel-caption">📍 Sherwood Park, Alberta</div>
-                                </div>
-
-                            </div>
-
-                            <!-- Navigation Arrows -->
-                            <button class="carousel-btn prev-btn">&#10094;</button>
-                            <button class="carousel-btn next-btn">&#10095;</button>
-
-                            <!-- Dots Indicator -->
-                            <div class="carousel-dots">
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="experience">
-                        <p class="job-title"><b>MY SPIRITUALITY AND VALUES</b></p>
-                        <ul>
-                            <li>Most importantly, I value compassion and empathy in my interactions with others. Thanks to my Islamic faith and upbringing, I strive to treat everyone with kindness and understanding.</li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
-        </main>
-        
-<div class="container">
         <main>
             <div id="work" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-work">
                 <section>
@@ -767,6 +648,122 @@
                     </div>
                 </section>
             </div>
+            
+            <div id="home" class="tab-content active" role="tabpanel" aria-labelledby="tab-btn-home">
+                <section>
+                    <h2>Welcome!</h2>
+                    <p>
+                        My name is <strong>Shiza</strong> and I am a passionate mechanical engineering student studying at the University of Alberta, with a strong interest 
+                        in designing medical technology. I am eager to contribute to innovative solutions that improve patient care and health outcomes.
+                    </p>
+                </section>
+            </div>
+
+            <div id="interests" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-interests">
+                <section>
+                    <h2>Interests</h2>
+                    <div class="experience">
+                        <p class="job-title"><b>MY LOVE FOR ART</b>
+                        </p>
+                        <ul>
+                            <li>Outside of university, I enjoy painting and creating art. I find it to be a relaxing and fulfilling hobby that allows me to express my creativity. This past year, I had the opportunity to showcase my artwork on local transit buses running in Strathcona County, which was an exciting experience! 
+                                Check out my artwork here: <a href="https://www.instagram.com/p/DTef9KUESfZ/?img_index=2" target="_blank" rel="noopener noreferrer">Strathcona County Next Gen - Local Bus Art</a>. I often enjoy painting abstract art to decorate my living space in my free time.</li>
+                        </ul>
+                        <!-- INSTAGRAM CAROUSEL SLIDER -->
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="carouselTrack">
+                                
+                                <!-- Slide 1 -->
+                                <div class="carousel-slide">
+                                    <img src="wall_art.jpeg" alt="Artwork on my bedroom wall">
+                                    <div class="carousel-caption">Artwork on my bedroom wall</div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="carousel-slide">
+                                    <img src="Allah_art.jpg" alt="Framed artwork of the word 'Allah' in Arabic calligraphy">
+                                    <div class="carousel-caption">Framed artwork of the word 'Allah' in Arabic calligraphy</div>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Arrows -->
+                            <button class="carousel-btn prev-btn">&#10094;</button>
+                            <button class="carousel-btn next-btn">&#10095;</button>
+
+                            <!-- Dots Indicator -->
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience">
+                        <p class="job-title"><b>MY PASSION FOR VOLUNTEERING</b></p>
+                        <ul>
+                            <li>Another thing I enjoy in my free time is volunteering and giving back to my community. By volunteering at my local mosque, I have been able to make a positive impact on the lives of others and contribute to causes that I am passionate about.
+                                To learn more, check out what our mosque has been up to here: <a href="https://www.instagram.com/masjidinthepark/" target="_blank" rel="noopener noreferrer">Masjid In the Park - Community Events</a>.</li>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="experience">
+                        <p class="job-title"><b>MY LOVE FOR OUTDOOR PHOTOGRAPHY</b></p>
+                        <ul>
+                            <li>I enjoy photography and capturing moments in time, such as sunsets and sunrises. I find it to be a rewarding hobby that allows me to explore my surroundings and appreciate the beauty of the world around me.</li>
+                        </ul>
+                        <!-- INSTAGRAM CAROUSEL SLIDER -->
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="carouselTrack">
+                                
+                                <!-- Slide 1 -->
+                                <div class="carousel-slide">
+                                    <img src="madina.jpeg.jpeg" alt="Sunset picture taken in Madina, Saudi Arabia">
+                                    <div class="carousel-caption">📍 Madina, Saudi Arabia</div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="carousel-slide">
+                                    <img src="sunrise.jpeg" alt="Sunrise picture taken in Edmonton, Alberta, on the University of Alberta campus">
+                                    <div class="carousel-caption">📍 Edmonton, Alberta, University of Alberta</div>
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div class="carousel-slide">
+                                    <img src="kelowna_sunset.jpeg" alt="Sunset picture taken in Kelowna, British Columbia">
+                                    <div class="carousel-caption">📍 Kelowna, British Columbia</div>
+                                </div>
+
+                                 <!-- Slide 4 -->
+                                <div class="carousel-slide">
+                                    <img src="backyard_sunset.jpeg" alt="Sunset picture taken in Sherwood Park, Alberta">
+                                    <div class="carousel-caption">📍 Sherwood Park, Alberta</div>
+                                </div>
+
+                            </div>
+
+                            <!-- Navigation Arrows -->
+                            <button class="carousel-btn prev-btn">&#10094;</button>
+                            <button class="carousel-btn next-btn">&#10095;</button>
+
+                            <!-- Dots Indicator -->
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience">
+                        <p class="job-title"><b>MY SPIRITUALITY AND VALUES</b></p>
+                        <ul>
+                            <li>Most importantly, I value compassion and empathy in my interactions with others. Thanks to my Islamic faith and upbringing, I strive to treat everyone with kindness and understanding.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
             <div id="contact" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-contact">
                 <section>
                     <h2>Let's Connect</h2>
@@ -786,7 +783,6 @@
                 </section>
             </div>
         </main>
-
         <!--footer>
             <div class="footer-content">
                 <p>Shiza Rehman
