@@ -422,52 +422,46 @@
 
     <!-- CAROUSEL SCRIPT -->
     <script>
+    document.querySelectorAll('.carousel-container').forEach((carousel) => {
         let slideIndex = 0;
 
-        function updateCarousel() {
-            const track = document.getElementById('carouselTrack');
-            const dots = document.querySelectorAll('.carousel-dots .dot');
-            track.style.transform = `translateX(-${slideIndex * 100}%)`;
+            const track = carousel.querySelector('.carouselTrack');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const dots = carousel.querySelectorAll('.dot');
+            const totalSlides = slides.length;
 
-            dots.forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === slideIndex);
+            function updateCarousel() {
+                if (track) {
+                    track.style.transform = `translateX(-${slideIndex * 100}%)`;
+                }
+
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === slideIndex);
+                });
+}
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                slideIndex = (slideIndex + 1) % totalSlides;
+                updateCarousel();
             });
         }
 
-        function moveSlide(step) {
-            const totalSlides = document.querySelectorAll('.carousel-slide').length;
-            slideIndex = (slideIndex + step + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-
-        function currentSlide(index) {
-            slideIndex = index;
-            updateCarousel();
-        }
-    </script>
-    <script>
-        let slideIndex1 = 0;
-
-        function updateCarousel() {
-            const track = document.getElementById('carouselTrack');
-            const dots = document.querySelectorAll('.carousel-dots .dot');
-            track.style.transform = `translateX(-${slideIndex1 * 100}%)`;
-
-            dots.forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === slideIndex1);
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
             });
         }
 
-        function moveSlide(step) {
-            const totalSlides = document.querySelectorAll('.carousel-slide').length;
-            slideIndex1 = (slideIndex1 + step + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-
-        function currentSlide(index) {
-            slideIndex1 = index;
-            updateCarousel();
-        }
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                slideIndex = idx;
+                updateCarousel();
+            });
+        });
     </script>
 </head>
 
@@ -547,8 +541,8 @@
                             </div>
 
                             <!-- Navigation Arrows -->
-                            <button class="carousel-btn prev-btn" onclick="moveSlide(-1, 'carouselTrack')">&#10094;</button>
-                            <button class="carousel-btn next-btn" onclick="moveSlide(1, 'carouselTrack')">&#10095;</button>
+                            <button class="carousel-btn prev-btn">&#10094;</button>
+                            <button class="carousel-btn next-btn">&#10095;</button>
 
                             <!-- Dots Indicator -->
                             <div class="carousel-dots">
@@ -602,15 +596,15 @@
                             </div>
 
                             <!-- Navigation Arrows -->
-                            <button class="carousel-btn prev-btn" onclick="moveSlide(-1, 'carouselTrack2')">&#10094;</button>
-                            <button class="carousel-btn next-btn" onclick="moveSlide(1, 'carouselTrack2')">&#10095;</button>
+                            <button class="carousel-btn prev-btn">&#10094;</button>
+                            <button class="carousel-btn next-btn">&#10095;</button>
 
                             <!-- Dots Indicator -->
                             <div class="carousel-dots">
-                                <span class="dot active" onclick="currentSlide(0)"></span>
-                                <span class="dot" onclick="currentSlide(1)"></span>
-                                <span class="dot" onclick="currentSlide(2)"></span>
-                                <span class="dot" onclick="currentSlide(3)"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
                             </div>
                         </div>
                     </div>
