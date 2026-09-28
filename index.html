@@ -432,6 +432,9 @@
                     <button class="nav-link active" role="tab" id="tab-btn-home" aria-selected="true" aria-controls="home" onclick="switchTab(event, 'home')">Home</button>
                 </li>
                 <li class="nav-item" role="presentation">
+                    <button class="nav-link" role="tab" id="tab-btn-about" aria-selected="false" aria-controls="about" onclick="switchTab(event, 'about')">About</button>
+                </li>
+                <li class="nav-item" role="presentation">
                     <button class="nav-link" role="tab" id="tab-btn-work" aria-selected="false" aria-controls="work" onclick="switchTab(event, 'work')">Work</button>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -457,6 +460,24 @@
         </header>
 
         <main>
+            <div id="about" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-about">
+                <section>
+                    <h2>About Me</h2>
+                    <p>
+                        <h3>SUMMARY</h3>
+                            <ul>
+                                <li>Motivated Mechanical Engineering student at the University of Alberta seeking internship and part-time opportunities to apply technical, problem-solving, communication, and teamwork skills in a professional environment. Detail-oriented, highly coachable, and committed to learning.</li>
+                            </ul>
+                        <h3>SKILLS</h3>
+                            <ul>
+                                <li>Technical Skills: Proficient in CAD software (SolidWorks, AutoCAD), MATLAB, and Python.</li>
+                                <li>Professional Skills: Written and verbal communication, customer service, problem-solving, critical 
+                                    thinking, teamwork, organization, time management, attention to detail, cash handling
+                                    Other: Adaptability in fast-paced environments, creativity, highly coachable </li>
+                            </ul>
+                    </p>
+                </section>
+            </div>
             <div id="work" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-work">
                 <section>
                     <h2>Work Experience</h2>
