@@ -444,6 +444,28 @@
             slideIndex = index;
             updateCarousel();
         }
+        let slideIndex = 0;
+
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const dots = document.querySelectorAll('.carousel-dots .dot');
+            track.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+            dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === slideIndex);
+            });
+        }
+
+        function moveSlide(step) {
+            const totalSlides = document.querySelectorAll('.carousel-slide').length;
+            slideIndex = (slideIndex + step + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function currentSlide(index) {
+            slideIndex = index;
+            updateCarousel();
+        }
     </script>
 </head>
 
